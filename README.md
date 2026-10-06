@@ -39,3 +39,6 @@ activan el sitio
 5.- En detalles avanzados en datos de usuario, pegamos o subimos el user_data.sh
 6.- Launchear la instancia y esperar unos 5 minutos
 7.- Abrir http://IP PUBLICA DE LA INSTANCIA, en un navegador compatible (No Brave)
+
+# EL MENSAJE SERÍA
+# Aplicacion Flask en AWS de Jean Franco Juarez - 05/10/2026 desplegada automaticamente en AWS
