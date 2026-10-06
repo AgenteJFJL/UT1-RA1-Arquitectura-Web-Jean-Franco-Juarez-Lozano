@@ -26,4 +26,16 @@ Define la ruta / con @app.route("/")
 El app.wsgi es un adaptador, añade a la carpeta de aplicacion a las rutas onde Python busca módulos, para que encuentra app.py
 
 # El flaskapp.conf
-Es el Virtualhost de Apache, define un sitio que atiende peticiones en este caso el puerto 80 (HTTP)
+Es el Virtualhost de Apache, define un sitio que atiende peticiones en este caso el puerto 80 (HTTP), también gestiona el script WSGI, permite a Apache acceder a la carpeta de la aplicacion, sin esto, devolvería un error 403.
+
+# finalmente las ultimas lineas
+activan el sitio
+
+# EXPLICACION RAPIDA DE LOS PASOS QUE HICE
+1.- En EC2, launchear una instancia y elegir una AMI de Ubuntu Server.
+2.- Elegir una instancia micro t2 o micro t3
+3.- En configuracion de red, habilitamos que se asigne una public IP automáticamente
+4.- En el grupo de seguridad creamos unos, en SSH con nuestra IP, y una de HTTP personalizado con 0.0.0.0/0 para hacer la web accesible
+5.- En detalles avanzados en datos de usuario, pegamos o subimos el user_data.sh
+6.- Launchear la instancia y esperar unos 5 minutos
+7.- Abrir http://IP PUBLICA DE LA INSTANCIA, en un navegador compatible (No Brave)
